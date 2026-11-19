@@ -52,7 +52,7 @@ export function getCloudFirebaseApp() {
   };
 
   if (Object.values(config).some(v => !v || /REPLACE|YOUR_PROJECT/.test(v))) {
-    throw new Error('Chưa điền cấu hình Firebase Web trong .env.local.');
+    throw new Error('Firebase Web configuration is missing from .env.local.');
   }
 
   const app = getApps().find(app => app.name === '[DEFAULT]')
@@ -65,7 +65,7 @@ export function getCloudFirebaseApp() {
     const key = env.VITE_RECAPTCHA_SITE_KEY;
 
     if (!key || key === 'REPLACE_ME') {
-      throw new Error('Thiếu reCAPTCHA Enterprise site key.');
+      throw new Error('The reCAPTCHA Enterprise site key is missing.');
     }
 
     if (import.meta.env.DEV && env.VITE_APPCHECK_DEBUG === 'true') {
