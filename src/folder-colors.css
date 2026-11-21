@@ -1,0 +1,35 @@
+/* A fixed pastel palette keeps saved folder colors predictable across themes. */
+[data-folder-color="sage"]{--folder-surface:#e8f1e6;--folder-border:#c2d5bf;--folder-ink:#355b42;--folder-dark-surface:#29392f;--folder-dark-border:#526c57;--folder-dark-ink:#d7e8d6}
+[data-folder-color="sky"]{--folder-surface:#e7eff8;--folder-border:#bed0e5;--folder-ink:#355877;--folder-dark-surface:#293743;--folder-dark-border:#4f6980;--folder-dark-ink:#d7e7f4}
+[data-folder-color="lavender"]{--folder-surface:#eee9f7;--folder-border:#d1c3e5;--folder-ink:#5c4876;--folder-dark-surface:#352f43;--folder-dark-border:#716080;--folder-dark-ink:#e9dff4}
+[data-folder-color="rose"]{--folder-surface:#f8e8ec;--folder-border:#e4c4ce;--folder-ink:#794a5b;--folder-dark-surface:#432f37;--folder-dark-border:#805e6b;--folder-dark-ink:#f2dee6}
+[data-folder-color="peach"]{--folder-surface:#faecdf;--folder-border:#e7ccb1;--folder-ink:#77523a;--folder-dark-surface:#42352c;--folder-dark-border:#806951;--folder-dark-ink:#f2e3d5}
+[data-folder-color="butter"]{--folder-surface:#f6f1d9;--folder-border:#dfd4a7;--folder-ink:#665b2f;--folder-dark-surface:#3b3928;--folder-dark-border:#777045;--folder-dark-ink:#eee8c8}
+.paper.folder-card,html[data-theme="light"] .paper.folder-card{background:var(--folder-surface);border-color:var(--folder-border);border-top-width:5px;color:var(--folder-ink)}
+.folder-card .folder-open,.folder-card .folder-open:hover:not(:disabled){background:transparent;color:inherit}
+.folder-card .folder-open>span,.folder-card .folder-open h2,.folder-card .folder-open small{color:inherit}
+.folder-color-menu{margin:14px 0 10px;border-top:1px solid var(--folder-border);padding-top:10px}
+.folder-color-menu>summary{display:flex;align-items:center;gap:8px;width:fit-content;margin-inline:auto;cursor:pointer;list-style:none;font-size:13px;font-weight:500;border-radius:5px;padding:3px}
+.folder-color-menu>summary::-webkit-details-marker{display:none}
+.folder-color-menu>summary:focus-visible{outline:3px solid #c88d43;outline-offset:3px}
+.folder-color-dot{display:inline-block;flex:none;width:15px;height:15px;border:1px solid var(--folder-border);border-radius:50%;background:var(--folder-surface);box-shadow:inset 0 0 0 2px #ffffff70}
+.folder-color-picker{padding:6px 12px;min-width:0;text-align:center}
+.folder-swatches{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:5px 0 7px}
+.folder-swatches .folder-swatch,.folder-swatches .folder-swatch:hover:not(:disabled){display:grid;place-items:center;flex:none;width:32px;height:32px;border:2px solid var(--folder-border);padding:0;border-radius:50%;background:var(--folder-surface);color:var(--folder-ink);font-size:17px;line-height:1}
+.folder-swatches .folder-swatch[aria-pressed="true"]{border-color:var(--folder-ink);box-shadow:0 0 0 2px #fffefa}
+.folder-color-picker>small{display:block;font-size:12px;color:inherit;text-align:center}
+.folder-color-label{font-size:14px;font-weight:600;margin:14px 0 3px}
+html[data-theme="dark"] .paper.folder-card{background:var(--folder-dark-surface);border-color:var(--folder-dark-border);color:var(--folder-dark-ink)}
+html[data-theme="dark"] .folder-color-menu{border-color:var(--folder-dark-border)}
+html[data-theme="dark"] .folder-swatches .folder-swatch[aria-pressed="true"]{box-shadow:0 0 0 2px #202923}
+/* The header has its own quiet surface while the content retains its paper color. */
+.notebook-header{z-index:6;margin:0 -38px;padding:25px 38px 22px;background:#e7eee3;border-bottom:1px solid #c8d7c0;border-radius:0 0 16px 16px;box-shadow:0 3px 10px #304b3010}
+.notebook-header nav button.active{background:#f8fbf5;border-color:#becfb5;box-shadow:0 1px 3px #314f2e0c}
+html[data-paper="blue"] .notebook-header{background:#e0eaf3;border-color:#bfcede}
+html[data-paper="rose"] .notebook-header{background:#f0e3e6;border-color:#ddc4cb}
+html[data-theme="dark"] .notebook-header{background:#24372d;border-color:#405447;box-shadow:0 3px 10px #0002}
+html[data-theme="dark"][data-paper="blue"] .notebook-header{background:#243543;border-color:#405669}
+html[data-theme="dark"][data-paper="rose"] .notebook-header{background:#3c2c33;border-color:#60454f}
+html[data-theme="dark"] .notebook-header nav button.active{background:#3b5342;border-color:#5a735f}
+@media(max-width:1100px){.notebook-header{margin-inline:-22px;padding-inline:22px}}
+@media(max-width:650px){.notebook-header{margin-inline:-14px;padding:19px 14px;border-radius:0 0 12px 12px}}

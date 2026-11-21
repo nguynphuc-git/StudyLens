@@ -7,28 +7,38 @@
 "node": ">=22.12.0"
 },
 "scripts": {
-"dev": "vite --host 0.0.0.0",
+"local": "node scripts/start-local.mjs",
+"prelocal": "node scripts/prepare-ocr-assets.mjs",
+"predev": "node scripts/prepare-ocr-assets.mjs",
+"dev": "node scripts/start-dev.mjs --host 0.0.0.0",
+"prebuild": "node scripts/prepare-ocr-assets.mjs",
 "build": "tsc --noEmit && vite build",
+"setup:math-ocr": "node scripts/setup-math-ocr.mjs",
 "preview": "vite preview --host 0.0.0.0",
 "test": "vitest run"
 },
 "dependencies": {
+"@tesseract.js-data/eng": "1.0.0",
 "firebase": "13.3.0",
 "idb-keyval": "6.3.0",
 "katex": "0.19.1",
+"mathlive": "0.111.4",
 "pdfjs-dist": "6.5.438",
 "react": "19.3.1",
 "react-dom": "19.3.1",
 "react-markdown": "10.1.0",
 "rehype-katex": "7.0.1",
 "remark-gfm": "4.0.1",
-"remark-math": "6.0.0"
+"remark-math": "6.0.0",
+"tesseract.js": "7.0.0"
 },
 "devDependencies": {
 "@playwright/test": "1.65.0",
 "@types/react": "19.3.0",
 "@types/react-dom": "19.3.0",
 "@vitejs/plugin-react": "6.3.0",
+"firebase-tools": "15.36.0",
+"happy-dom": "21.0.4",
 "typescript": "7.0.2",
 "vite": "8.3.8",
 "vite-plugin-pwa": "2.0.0",

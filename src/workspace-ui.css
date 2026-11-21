@@ -1,0 +1,79 @@
+:root{--menu-surface:#fffefa;--menu-ink:#273d32;--menu-muted:#687c6d;--menu-border:#d5dfd1;--menu-hover:#edf3e8;--menu-selected:#284c3b;--menu-selected-ink:#f7fff8}
+html[data-theme="dark"]{--menu-surface:#24342b;--menu-ink:#e1ebe2;--menu-muted:#a6b9aa;--menu-border:#455d4b;--menu-hover:#304638;--menu-selected:#3d604a;--menu-selected-ink:#f4fff5}
+/* Content tools stay left; the four exercise actions form a right-aligned group. */
+.workspace-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto;align-items:center;gap:6px 18px;overflow:visible}
+.workspace-tools{grid-column:1;grid-row:2;display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+.workspace-toolbar .workspace-actions{display:contents}
+.workspace-actions>.row{grid-column:2;grid-row:2;justify-content:flex-end;gap:8px}
+.workspace-actions .save-state{grid-column:2;grid-row:1;justify-self:end;max-width:none;text-align:right;flex-basis:auto}
+.workspace-actions .cloud-switch{grid-column:2;grid-row:3;justify-self:end;align-self:flex-end}
+.workspace-actions .cloud-switch strong{color:inherit}
+.appearance-settings,.tool-content{border-radius:18px;border-color:var(--menu-border);background:var(--menu-surface);color:var(--menu-ink);box-shadow:0 18px 55px #132c2330;padding:20px}
+html[data-theme="dark"] .appearance-settings,html[data-theme="dark"] .tool-content{background:var(--menu-surface);border-color:var(--menu-border)}
+.appearance-options{gap:12px}.appearance-field{min-width:0}.appearance-field>span,.study-style-field>span{display:block;font-size:13px;font-weight:600;letter-spacing:.02em;margin-bottom:7px;color:var(--menu-muted)}
+.study-style-field>small{display:block;color:var(--menu-muted);font-size:12px;line-height:1.6;margin-top:8px}
+.select-menu{min-width:0}.select-menu .select-trigger,html[data-theme="dark"] .select-menu .select-trigger{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:38px;padding:7px 10px;background:var(--menu-surface);color:var(--menu-ink);border:1px solid var(--menu-border);border-radius:10px;font-size:13px;text-align:left;font-weight:500;box-shadow:0 1px 2px #16281d05}
+.select-trigger>span:first-child{min-width:0;overflow-wrap:break-word}.select-trigger[aria-expanded="true"]{outline:3px solid #718e7133;outline-offset:2px}.menu-chevron{display:grid;place-items:center;flex:0 0 23px;width:23px;height:23px;line-height:0;border:1px solid var(--menu-border);border-radius:7px;align-self:center}.menu-chevron svg{display:block;width:13px;height:13px;transition:transform .18s ease;transform-origin:50% 50%}.menu-chevron svg[data-expanded="true"],details[open]>summary>.menu-chevron svg{transform:rotate(180deg)}
+.appearance-disclosure>summary,.tool-disclosure>summary{display:flex;align-items:center;justify-content:space-between;gap:10px}
+
+.select-options{position:fixed;z-index:90;padding:5px;border:1px solid var(--menu-border);border-radius:17px;background:var(--menu-surface);color:var(--menu-ink);box-shadow:0 22px 60px #10291e3b;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#8da68f transparent}
+.select-options button[role="option"],html[data-theme="dark"] .select-options button[role="option"]{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;margin:2px 0;padding:9px 11px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--menu-ink);font-size:13px;text-align:left;font-weight:500}
+.select-options button[role="option"].highlighted,.select-options button[role="option"]:hover:not(:disabled){background:var(--menu-hover);border-color:var(--menu-border)}
+.select-options button[role="option"][aria-selected="true"],html[data-theme="dark"] .select-options button[role="option"][aria-selected="true"]{background:var(--menu-selected);color:var(--menu-selected-ink);border-color:var(--menu-selected);box-shadow:0 3px 9px #12291a13}
+.select-options button small{display:block;font-size:12px;margin-top:3px;opacity:.78}.option-check{flex-shrink:0;width:18px;font-size:17px}
+/* MathLive hosts and all three editor surfaces follow the app theme. */
+.math-editor{--editor-placeholder:#788c7d}
+.math-input math-field::part(placeholder){color:var(--editor-placeholder)}
+html[data-theme="dark"] .math-editor{--editor-placeholder:#a6b9ac}
+html[data-theme="dark"] .math-editor .math-input{background:repeating-linear-gradient(transparent,transparent 31px,#99af9a12 32px) #29382f;border-color:#485e4e;color:#e5eee7}
+html[data-theme="dark"] .math-editor .math-input math-field{background:transparent;color:#e5eee7;--caret-color:#a1d2ad;--selection-color:#f0fff3;--selection-background-color:#45664e;--contains-highlight-background-color:#3b5444;--contains-highlight-color:#e5eee7;--highlight-text:#a1d2ad16;--placeholder-color:#b3cbb9;--placeholder-opacity:.8;--smart-fence-color:#d7eadb;--composition-background-color:#514b34;--composition-text-color:#f5eedc;color-scheme:dark}
+html[data-theme="dark"] .math-editor .math-input.compact{background:transparent}
+html[data-theme="dark"] .editor-mode-bar small{color:#a3b6a7}
+html[data-theme="dark"] .math-keyboard .more-symbols,html[data-theme="dark"] .notes-editor .notes-keyboard-toggle{background:#30483a;border-color:#57725f;color:#e3eee5}
+html[data-theme="dark"] .math-keyboard .more-symbols:hover:not(:disabled),html[data-theme="dark"] .notes-editor .notes-keyboard-toggle:hover:not(:disabled){background:#3a5945}
+html[data-theme="dark"] .symbol-browser,html[data-theme="dark"] .symbol-drawer-heading{background:#24342b;border-color:#4a6250;color:#e3eee5}
+html[data-theme="dark"] .symbol-browser .math-keys button{background:#2b3c30;color:#e3eee5;border-color:#4a6250}
+html[data-theme="dark"] .symbol-browser .symbol-categories button[aria-pressed="true"]{background:#3d604a;border-color:#70977b;color:#f4fff5}
+html[data-theme="dark"] .symbol-browser .keyboard-target,html[data-theme="dark"] .symbol-browser .recent-symbols small{color:#a8bcad}
+html[data-theme="dark"] .symbol-browser .keyboard-target strong{color:#d2e6d7}
+html[data-theme="dark"] .symbol-browser .symbol-categories{border-color:#4a6250}
+/* Decorative login mathematics never intercepts input or enters the reading order. */
+.login-page{position:relative;isolation:isolate;z-index:1;min-height:100dvh}
+/* Signed-out decoration reaches the edge without an unused stable scrollbar gutter. */
+html:has(.login-math-backdrop){scrollbar-gutter:auto}
+.login-math-backdrop{--login-base:#f5f4ed;position:fixed;inset:0;width:100vw;max-width:none;height:100vh;height:100dvh;margin:0;overflow:hidden;z-index:0;pointer-events:none;user-select:none;background:radial-gradient(ellipse at 100% 55%,#c2d5e94d,transparent 65%),radial-gradient(ellipse at 0 35%,#b9d8bd40,transparent 60%),var(--login-base)}
+html[data-paper=sage] .login-math-backdrop{--login-base:#eaf0e7}html[data-paper=blue] .login-math-backdrop{--login-base:#eaf0f6}html[data-paper=rose] .login-math-backdrop{--login-base:#f5ecec}
+.login-math-backdrop>span{position:absolute;font-family:'Lora',Georgia,serif;color:#527760;opacity:.16;animation:math-drift 28s ease-in-out infinite alternate}
+.login-halo{position:absolute;width:clamp(360px,55vw,900px);height:clamp(360px,55vw,900px);border-radius:50%;background:radial-gradient(circle,#b9d8bd55,transparent 69%)}.halo-one{top:5%;left:-6%}.halo-two{right:-6%;bottom:0;background:radial-gradient(circle,#c2d5e955,transparent 69%)}
+.login-page .account-panel{position:relative;margin-top:64px;border-radius:23px;padding:38px;box-shadow:0 22px 65px #193e2510;background:#fffefae8;backdrop-filter:blur(10px)}
+.login-page .account-panel h1{font-size:34px}.login-page .account-panel form{padding:6px 0}.login-page .account-panel input{border-radius:10px;min-height:47px}
+html[data-theme="dark"] .login-math-backdrop>span{color:#c2dec8;opacity:.14}
+html[data-theme="dark"] .login-math-backdrop{--login-base:#171d1a;background:radial-gradient(ellipse at 100% 55%,#627d8e26,transparent 65%),radial-gradient(ellipse at 0 35%,#6c947626,transparent 60%),var(--login-base)}
+html[data-theme="dark"] .login-page .account-panel{background:#26362ee8;border-color:#4a5f50;box-shadow:0 22px 65px #0002}
+html[data-theme="dark"] .login-math-backdrop .login-halo{opacity:.55}
+@keyframes math-drift{0%{transform:translate3d(-7px,10px,0) rotate(-6deg)}50%{transform:translate3d(9px,-13px,0) rotate(2deg)}100%{transform:translate3d(-4px,-30px,0) rotate(7deg)}}
+@media(max-width:760px){.workspace-toolbar{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto auto}.workspace-tools{grid-column:1;grid-row:2;justify-content:flex-start}.workspace-actions .save-state{grid-column:1;grid-row:1}.workspace-actions>.row{grid-column:1;grid-row:3}.workspace-actions .cloud-switch{grid-column:1;grid-row:4}}
+@media(max-width:650px){.workspace-actions>.row{justify-content:flex-end}.workspace-tools{gap:7px}.workspace-tools>details{min-width:0}.tool-content{left:0;right:auto}.login-page .account-panel{margin-top:32px;padding:24px;gap:22px}.login-page .account-panel h1{font-size:29px}.login-math-backdrop>span:nth-of-type(n+14){display:none}}
+@media(prefers-reduced-motion:reduce){.login-math-backdrop>span{animation:none}.menu-chevron svg{transition:none}}
+
+/* Compact Appearance controls, including a range input independent of native input styling. */
+.appearance-settings{width:min(360px,calc(100vw - 32px));padding:16px}.appearance-settings .appearance-field>span{font-size:12px;margin-bottom:5px}.appearance-settings .appearance-preview{margin:12px 0;padding:10px}.appearance-settings .appearance-size label{font-size:13px}
+html .appearance-settings .appearance-size input[type=range]{appearance:none;display:block;width:180px;max-width:100%;height:18px;margin:8px auto 0;padding:0;border:0;border-radius:0;background:transparent}
+.appearance-size input[type=range]::-webkit-slider-runnable-track{height:4px;background:var(--menu-border);border-radius:9px}.appearance-size input[type=range]::-webkit-slider-thumb{appearance:none;width:14px;height:14px;margin-top:-5px;border:2px solid var(--menu-surface);border-radius:50%;background:#5f9577;box-shadow:0 0 0 1px #5f9577}
+.appearance-size input[type=range]::-moz-range-track{height:4px;background:var(--menu-border);border-radius:9px}.appearance-size input[type=range]::-moz-range-thumb{width:11px;height:11px;border:2px solid var(--menu-surface);border-radius:50%;background:#5f9577}.appearance-size input[type=range]::-moz-range-progress{height:4px;background:#5f9577;border-radius:9px}
+html[data-theme="dark"] .hint-cloud-suggestion,html[data-theme="dark"] .cloud-recommendation{background:#2b4032;border-color:#48624e;color:#d9e9dc}
+html[data-theme="dark"] .hint-cloud-suggestion p,html[data-theme="dark"] .cloud-recommendation p{color:#d9e9dc}
+html[data-theme="dark"] .hint-cloud-suggestion button{background:#35553e;border-color:#66866f;color:#effbf1}
+
+/* Busy states and import choices remain legible with the app's Dark theme. */
+html[data-theme="dark"] .ai-toolbar{background:#2b3c32;border-color:#4a6251;color:#e2eee5;box-shadow:0 4px 18px #0003}
+html[data-theme="dark"] button.stop-ai{background:#45332b;border-color:#8c6b55;color:#f7dfcf}
+html[data-theme="dark"] button.stop-ai:hover:not(:disabled){background:#574035}
+html[data-theme="dark"] .live-answer{color:#d0e3d3;border-color:#72947b}
+html[data-theme="dark"] .pdf-dialog-actions,html[data-theme="dark"] .pdf-replace-confirm{background:#26362c;border-color:#4a6251;color:#e2eee5}
+html[data-theme="dark"] .pdf-dialog-header,html[data-theme="dark"] .pdf-typeset-details,html[data-theme="dark"] .pdf-dialog .import-source{border-color:#43564a}
+html[data-theme="dark"] .pdf-dialog-header h2,html[data-theme="dark"] .pdf-question-browser-heading h3,html[data-theme="dark"] .pdf-dialog .import-review-columns h3{color:#e2eee5}
+html[data-theme="dark"] .pdf-question-list button{background:#202c25;border-color:#4a6251;color:#e2eee5}
+html[data-theme="dark"] .pdf-question-list button[aria-pressed="true"]{background:#36533f;border-color:#7eaa88;box-shadow:inset 3px 0 #a0c8a6}
+html[data-theme="dark"] .pdf-question-list button:hover:not(:disabled){background:#304b39;border-color:#7eaa88}
+html[data-theme="dark"] .pdf-question-list button span,html[data-theme="dark"] .pdf-question-list button strong small,html[data-theme="dark"] .pdf-question-browser-heading>div span,html[data-theme="dark"] .pdf-format-actions>span,html[data-theme="dark"] .pdf-typeset-details>summary,html[data-theme="dark"] .pdf-replace-confirm p{color:#c1d4c5}
